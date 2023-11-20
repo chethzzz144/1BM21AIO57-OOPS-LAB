@@ -1,0 +1,33 @@
+class PalindromeFinder:
+    def __init__(self, input_string):
+        self.input_string = input_string
+
+    def is_palindrome(self, word):
+        # Helper method to check if a word is a palindrome
+        return word == word[::-1]
+
+    def get_palindromes(self):
+        words = self.input_string.split()
+        palindromes = [word for word in words if self.is_palindrome(word)]
+        return palindromes
+
+def main():
+    # Get user input for the string
+    input_string = input("Enter a string: ")
+
+    # Create an instance of PalindromeFinder
+    palindrome_finder = PalindromeFinder(input_string)
+
+    # Get the list of palindromes using the object's method
+    palindrome_list = palindrome_finder.get_palindromes()
+
+    # Display the result
+    if palindrome_list:
+        print("Palindromes in the string:")
+        for palindrome in palindrome_list:
+            print(palindrome)
+    else:
+        print("No palindromes found in the string.")
+
+if __name__ == "__main__":
+    main()
