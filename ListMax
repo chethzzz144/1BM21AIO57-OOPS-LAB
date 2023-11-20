@@ -1,0 +1,36 @@
+class ListMax:
+    def __init__(self, input_list):
+        self.input_list = input_list
+
+    def find_largest_element(self):
+        if not self.input_list:
+            return None  # Return None for an empty list
+
+        largest_element = self.input_list[0]
+        for element in self.input_list:
+            if element > largest_element:
+                largest_element = element
+
+        return largest_element
+
+
+
+def main():
+    
+    input_list = [int(x) for x in input("Enter a list of numbers: ").split()]
+
+    # Creating object
+    list_max = ListMax(input_list)
+
+   
+    largest_element = list_max.find_largest_element()
+
+    # result
+    if largest_element is not None:
+        print(f"The largest element is: {largest_element}")
+    else:
+        print("The list is empty. Cannot find the largest element.")
+
+
+if __name__ == "__main__":
+    main()
