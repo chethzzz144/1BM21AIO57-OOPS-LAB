@@ -1,0 +1,40 @@
+class CaesarCipher:
+    def __init__(self, shift):
+        self.shift = shift
+
+    def encrypt(self, text):
+        encrypted_text = ""
+        for char in text:
+            if char.isalpha():
+                
+                is_upper = char.isupper()
+                
+                char_code = ord(char)
+                shifted_code = (char_code - ord('A' if is_upper else 'a') + self.shift) % 26
+                encrypted_char = chr(shifted_code + ord('A' if is_upper else 'a'))
+                
+                encrypted_text += encrypted_char
+            else:
+                
+                encrypted_text += char
+
+        return encrypted_text
+
+
+def main():
+    # get user input 
+    plaintext = input("Enter the text to encrypt: ")
+    shift_amount = int(input("Enter the shift amount: "))
+
+    # Create object
+    cipher = CaesarCipher(shift_amount)
+
+    encrypted_text = cipher.encrypt(plaintext)
+
+    # result
+    print(f"Encrypted text: {encrypted_text}")
+
+
+
+if __name__ == "__main__":
+    main()
