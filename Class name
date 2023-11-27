@@ -1,0 +1,11 @@
+class BMS:
+  def display(self):
+    self.college_name="B. M. S. College of Engineering"
+    print(self.college_name)
+
+  def add(n1,n2):
+    print(n1+n2)
+
+B1=BMS()
+B1.display()
+BMS.add(4,5)
