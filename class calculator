@@ -1,0 +1,16 @@
+class calculator:
+  def display(self,version):
+    self.version=version
+    print(self.version)
+  def add(n1,n2):
+    print(n1+n2)
+def main(): 
+    c1=calculator()
+    c1.display("H2343")
+    calculator.add(4,5)
+    c2=calculator()
+    c2.display("VK4681")
+    calculator.add(5,8)
+
+if __name__=="__main__": 
+    main()       
